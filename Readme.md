@@ -18,9 +18,9 @@ This simple example is agnostic - for my use I extend it with my own framework, 
      * Install the *Git Bash Here* option
    * Install Composer : https://getcomposer.org/
 
-2. Clone this Repo
+2. Setup a new project
    ```
-   git clone https://github.com/bravedave/mvp.git mvp
+   composer create-project bravedave/mvp my-project @dev
    ```
 
 2. Install dependencies &amp; run
