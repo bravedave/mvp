@@ -12,10 +12,11 @@
         }
     ],
     "require": {
+        "erusev/parsedown": "^1.7"
     },
     "autoload": {
         "psr-4": {
-            "": "src/"
+            "": "src/app/"
 
         }
 
