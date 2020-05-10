@@ -41,3 +41,24 @@ This simple example is agnostic - for my use I extend it with my own framework, 
    composer require erusev/parsedown
    run.cmd
    ```
+
+* remove Extension
+   ```
+   composer remove erusev/parsedown
+   ```
+
+#### Extend with bravedave/pages
+* Install Extension &amp; run
+   ```
+   composer require bravedave/pages
+   run.cmd
+   ```
+
+* remove Extension
+   ```
+   composer remove bravedave/pages
+   ```
+
+#### more ..
+   Look at _src/app/launcher.php_ ...
+
