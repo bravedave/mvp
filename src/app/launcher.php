@@ -54,7 +54,7 @@ class launcher {
 					/**
 					 * Yeah - the Minimum Viable Product
 					 */
-					header( 'content/type: text/plain');
+					header( 'Content-Type: text/plain');
 					print 'see https://github.com/bravedave/mvp';
 
 				}

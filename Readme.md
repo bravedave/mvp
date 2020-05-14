@@ -7,7 +7,7 @@ This simple example is agnostic - for my use I extend it with my own framework, 
 
 ### What can I do with this ?
 
-> _It is very easy to extend this environment - and to publish the extension for use in this and any PSR-4 enviroment_
+> _Easily extend the environment - and to publish the extension for use in this and any PSR-4 enviroment_
 
 > _See example at https://github.com/bravedave/pages_
 
