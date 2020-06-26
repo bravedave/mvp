@@ -1,7 +1,7 @@
 #!/bin/sh
 
 WD=`pwd`
-PORT=14380
+PORT=$[RANDOM%1000+1024]
 
 cd www
 echo "this application is available at http://localhost:$PORT"
