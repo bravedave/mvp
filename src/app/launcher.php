@@ -21,7 +21,7 @@ class launcher {
 			 *  controller
 			 *  app
 			 */
-			new dvc\application( dirname( __DIR__));
+			application::run();
 
 		}
 		else {
