@@ -1,64 +1,74 @@
-## MVP - Minimum Viable Product
- _For PHP using composer initiated AutoLoad (PSR-4)_
+# MVP - Minimum Viable Product
 
-When PHP is deployed with Composer it allows easy distribution and updating.
+> _For PHP using composer initiated AutoLoad (PSR-4)_
 
-This simple example is agnostic - for my use I extend it with my own framework, here it is extended using a _Markdown Parser_.
+In deployment PHP is easily maintained using Composer. Composer handles distribution and updating.
 
-### What can I do with this ?
+This simple agnostic example is extended using a _Markdown Parser_.
 
-> _Easily extend the environment - and to publish the extension for use in this and any PSR-4 enviroment_
+## What can I do with this ?
 
-> _See example at https://github.com/bravedave/pages_
+> _Easily extend the environment - and to publish the extension for use in this and any PSR-4 enviroment - See example at <https://github.com/bravedave/pages>_
 
-#### Install (Windows 10)
+### Install (Windows 10)
+
 1. Install Pre-Requisits
-   1. Install PHP : http://windows.php.net/download/
+   1. Install PHP : <http://windows.php.net/download/>
       * Install the non threadsafe binary
         * Test by running php -v from the command prompt
           * If required install the VC++ runtime available from the php > download page
         * by default there is no php.ini (required)
           * copy php.ini-production to php.ini
-   2. Install Git : https://git-scm.com/
+   2. Install Git : <https://git-scm.com/>
       * Install the *Git Bash Here* option
-   3. Install Composer : https://getcomposer.org/
-2. Setup a new project
-   ```
-   composer create-project bravedave/mvp <my-project> @dev
-   ```
-2. Install dependencies &amp; run
-   ```
-   cd <my-project>
-   composer update
-   run.cmd
-   ```
+   3. Install Composer : <https://getcomposer.org/>
 
-   ... the result is visible at http://localhost/
+2.Setup a new project
 
-#### Extend with _erusev/parsedown_
+```bash
+composer create-project bravedave/mvp <my-project> @dev
+```
+
+2.Install dependencies &amp; run
+
+```bash
+cd <my-project>
+composer update
+run.cmd
+```
+
+> ... the result is visible at <http://localhost/>
+
+### Extend with _erusev/parsedown_
+
 * Install Extension &amp; run
-   ```
-   composer require erusev/parsedown
-   run.cmd
-   ```
+
+```bash
+composer require erusev/parsedown
+run.cmd
+```
 
 * remove Extension
-   ```
-   composer remove erusev/parsedown
-   ```
 
-#### Extend with bravedave/pages
+```bash
+composer remove erusev/parsedown
+```
+
+### Extend with bravedave/pages
+
 * Install Extension &amp; run
-   ```
-   composer require bravedave/pages
-   run.cmd
-   ```
+
+```bash
+composer require bravedave/pages
+run.cmd
+```
 
 * remove Extension
-   ```
-   composer remove bravedave/pages
-   ```
 
-#### more ..
-   Look at _src/app/launcher.php_ ...
+```bash
+composer remove bravedave/pages
+```
 
+### more
+
+> Look at _src/app/launcher.php_ ...
