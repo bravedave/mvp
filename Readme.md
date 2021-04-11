@@ -29,7 +29,7 @@ This simple agnostic example is extended using a _Markdown Parser_.
 composer create-project bravedave/mvp <my-project> @dev
 ```
 
-2.Install dependencies &amp; run
+3.Install dependencies &amp; run
 
 ```bash
 cd <my-project>
