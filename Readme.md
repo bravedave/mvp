@@ -39,6 +39,21 @@ run.cmd
 
 > ... the result is visible at <http://localhost/>
 
+### Extend with _Slim_
+
+* Install Extension &amp; run
+
+```bash
+composer require slim/slim slim/psr7 slim/php-view
+run.cmd
+```
+
+* Remove Extension &amp; run
+
+```bash
+composer rem slim/slim slim/psr7 slim/php-view
+```
+
 ### Extend with _erusev/parsedown_
 
 * Install Extension &amp; run
