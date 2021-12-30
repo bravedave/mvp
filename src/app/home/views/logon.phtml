@@ -1,0 +1,78 @@
+<html>
+
+<head>
+  <title>
+    <?= $title ?>
+
+  </title>
+  <link type="text/css" rel="stylesheet" media="all" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <form id="<?= $_form = uniqid() ?>" autocomplete="off">
+    <input type="hidden" name="action" value="logon">
+    <div class="modal fade" tabindex="-1" role="dialog" id="<?= $_modal = uniqid() ?>" aria-labelledby="<?= $_modal ?>Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="<?= $_modal ?>Label"><?= $title ?></h5>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col mb-2">
+                <label for="<?= $_uid = uniqid() ?>">username</label>
+                <input type="text" name="user" class="form-control" id="<?= $_uid ?>" value="david">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col mb-2">
+                <label for="<?= $_uid = uniqid() ?>">password</label>
+                <input type="password" name="pass" class="form-control" id="<?= $_uid ?>" value="password">
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">logon</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $('#<?= $_modal ?>').on('shown.bs.modal', () => {
+        $('#<?= $_form ?>')
+          .on('submit', function(e) {
+            let _form = $(this);
+            let _data = {};
+            _form.serializeArray().forEach(obj => _data[obj.name] = obj.value);
+
+            $.ajax({
+                type: "POST",
+                url: '/',
+                data: _data,
+                dataType: 'json'
+              })
+              .then(d => {
+                if ('ack' == d.response) {
+                  window.location.href = '/';
+                  console.log('reload ..');
+                } else {
+                  console.log(d.response);
+                  console.log(d);
+                }
+              });
+
+            return false;
+          });
+      });
+
+      $(document).ready(() => $('#<?= $_modal ?>').modal('show'));
+    </script>
+  </form>
+</body>
+
+</html>

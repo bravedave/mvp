@@ -24,31 +24,7 @@ class launcher {
 			 */
 			application::run();
 		} elseif (class_exists('Slim\Factory\AppFactory')) {
-			$app = Slim\Factory\AppFactory::create();
-
-			$app->get('/', function (
-				Psr\Http\Message\ServerRequestInterface $request,
-				Psr\Http\Message\ResponseInterface $response,
-				$args
-			) {
-
-				$response->getBody()->write("Hello world!");
-				return $response;
-			});
-
-			$app->get('/hello/{name}', function ($request, $response, $args) {
-				$renderer = new Slim\Views\PhpRenderer(__DIR__ . '/slim', [
-					'title' => 'Hello World',
-
-				]);
-
-				return $renderer->render($response, "layout.phtml", [
-					'name' => $args['name']
-
-				]);
-			})->setName('profile');
-
-			$app->run();
+			slim::run();
 		} elseif (class_exists('pages\page')) {
 			/**
 			 * use the tutorial from https://github.com/bravedave/pages
