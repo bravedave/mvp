@@ -31,14 +31,14 @@ run.cmd
 * Install Extension &amp; run
 
 ```bash
-composer require slim/slim slim/psr7 slim/php-view twbs/bootstrap
+composer require slim/slim slim/psr7 slim/php-view twbs/bootstrap twbs/bootstrap-icons
 run.cmd
 ```
 
 * Remove Extension &amp; run
 
 ```bash
-composer rem slim/slim slim/psr7 slim/php-view twbs/bootstrap
+composer rem slim/slim slim/psr7 slim/php-view twbs/bootstrap twbs/bootstrap-icons
 ```
 
 ### Extend with _erusev/parsedown_

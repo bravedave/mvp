@@ -20,6 +20,7 @@ class slim {
 			->add(home\auth::class);
 		$app->post('/', [home\controller::class, 'postHandler']);
 
+		$app->get('/css/fonts[/{file}]', [home\controller::class, 'css']);
 		$app->get('/css[/{file}]', [home\controller::class, 'css']);
 		$app->get('/js[/{file}]', [home\controller::class, 'js']);
 

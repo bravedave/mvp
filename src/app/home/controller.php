@@ -28,19 +28,39 @@ class controller {
   }
 
   function css(Request $request, Response $response, $args) {
-
+    // http://localhost:1696/css/fonts/bootstrap-icons.woff?30af91bf14e37666a085fb8a161ff36d
     if ($file = $args['file'] ?? '') {
-      if ('bootstrap.min.css' == $file) {
-        $reflection = new \ReflectionClass(\Composer\Autoload\ClassLoader::class);
-        $vendorDir = dirname(dirname($reflection->getFileName()));
+      $reflection = new \ReflectionClass(\Composer\Autoload\ClassLoader::class);
+      $vendorDir = dirname(dirname($reflection->getFileName()));
 
-        // $path = realpath($vendorDir . '/twbs/bootstrap/dist/');
-        $path = realpath($vendorDir . '/twbs/bootstrap/dist/css/' . $file);
-        // $response = new Response;
-        $response
-          ->withHeader('content-type', 'text/css')
-          ->getBody()->write(file_get_contents($path));
+      if ('bootstrap.min.css' == $file) {
+        if ($path = realpath($vendorDir . '/twbs/bootstrap/dist/css/' . $file)) {
+          $response
+            ->withHeader('content-type', 'text/css')
+            ->getBody()->write(file_get_contents($path));
+        }
+      } elseif ('bootstrap-icons.css' == $file) {
+
+        if ($path = realpath($vendorDir . '/twbs/bootstrap-icons/font/' . $file)) {
+          $response
+            ->withHeader('content-type', 'text/css')
+            ->getBody()->write(file_get_contents($path));
+        }
+      } elseif (in_array($file, [
+        'bootstrap-icons.woff',
+        'bootstrap-icons.woff2'
+      ])) {
+
+        if ($path = realpath($vendorDir . '/twbs/bootstrap-icons/font/fonts/' . $file)) {
+          $response
+            ->withHeader('content-type', 'application/font-woff')
+            ->getBody()->write(file_get_contents($path));
+        }
+      } else {
+        error_log(sprintf('<%s> %s', $file, __METHOD__));
       }
+    } else {
+      error_log(sprintf('<%s> %s', print_r($args), __METHOD__));
     }
 
     return $response;
