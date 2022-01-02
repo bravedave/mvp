@@ -10,6 +10,7 @@
 
 namespace home;
 
+use config;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -81,7 +82,7 @@ class controller {
           ->getBody()->write(file_get_contents($path));
       } elseif ('jquery.min.js' == $file) {
         $tmpfile = implode(DIRECTORY_SEPARATOR, [
-          sys_get_temp_dir(),
+          config::dataPath(),
           'jquery.min.js'
         ]);
 

@@ -1,7 +1,6 @@
 {
   "name": "bravedave/mvp",
   "description": "Minimum Viable Product",
-  "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
     {
