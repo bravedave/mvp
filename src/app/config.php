@@ -16,7 +16,7 @@ class config {
 
     if (!is_dir($path)) {
       mkdir($path);
-      chmod($path, 0x777);
+      chmod($path, 0777);
     }
 
     if (!file_exists($ignore = $path . DIRECTORY_SEPARATOR . '.gitignore')) {
