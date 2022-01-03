@@ -32,7 +32,13 @@ run.cmd
 
 ```bash
 composer require slim/slim slim/psr7 slim/php-view twbs/bootstrap twbs/bootstrap-icons
-run.cmd
+
+# if you are installing on CentOS running under apache or similar, it will need a data folder
+mkdir src/data
+chmod 777 src/data
+
+# to run locally ..
+./run.sh
 ```
 
 * Remove Extension &amp; run
