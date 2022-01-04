@@ -29,7 +29,6 @@ class launcher {
 			/**
 			 * use the tutorial from https://github.com/bravedave/pages
 			 * to activate this extension
-			 *
 			 */
 			$page = new pages\page;  // from outside this namespace
 			$page->open();
@@ -40,15 +39,19 @@ class launcher {
 			 * Well not that simple - you have extended it with
 			 * composer require erusev/parsedown
 			 */
+			$template = file_get_contents(__DIR__ . '/template/parsedown.html');
 
-			print '<html><body>';
-			print Parsedown::instance()->text(file_get_contents(__DIR__ . '/../../Readme.md'));
-			print '</body></html>';
+			print str_replace([
+				'{title}',
+				'{markdown}'
+			], [
+				'ParseDown Demo',
+				Parsedown::instance()
+					->text(file_get_contents(__DIR__ . '/../../Readme.md'))
+			], $template);
 		} else {
 
-			/**
-			 * Yeah - the Minimum Viable Product
-			 */
+			/* Yeah - the Minimum Viable Product */
 			header('Content-Type: text/plain');
 			print 'see https://github.com/bravedave/mvp';
 		}

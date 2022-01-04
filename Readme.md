@@ -21,7 +21,9 @@ composer create-project bravedave/mvp <my-project> @dev
 ```bash
 cd <my-project>
 composer update
-run.cmd
+
+# to run locally ..
+./run.sh
 ```
 
 > ... the result is visible at <http://localhost/>
@@ -53,7 +55,9 @@ composer rem slim/slim slim/psr7 slim/php-view twbs/bootstrap twbs/bootstrap-ico
 
 ```bash
 composer require erusev/parsedown
-run.cmd
+
+# to run locally ..
+./run.sh
 ```
 
 * remove Extension
