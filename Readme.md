@@ -68,4 +68,5 @@ composer remove erusev/parsedown
 
 ### more
 
-> Look at _src/app/launcher.php_ ...
+* There is a tutorial at <https://github.com/bravedave/dvc/blob/master/src/dvc/views/docs/risorsa.md>
+* Look at _src/app/launcher.php_ ...
