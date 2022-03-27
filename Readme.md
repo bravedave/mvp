@@ -4,11 +4,11 @@
 
 In deployment PHP is easily maintained using Composer. Composer handles distribution and updating.
 
-This simple agnostic example is extended using a _Markdown Parser_.
+This simple agnostic example can be extended using a _Markdown Parser_.
 
 ## What can I do with this ?
 
-> _Easily extend the environment - and to publish the extension for use in this and any PSR-4 enviroment - See example at <https://github.com/bravedave/pages>_
+>_Easily extend the environment - and to publish the extension for use in this and any PSR-4 enviroment - See example at <https://github.com/bravedave/pages>_
 
 1.Setup a new project
 
