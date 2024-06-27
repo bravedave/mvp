@@ -11,7 +11,30 @@
 
 class launcher {
 	static function run() {
+
+		if ('cli-server' == php_sapi_name()) {
+
+			if ('localhost' == $_SERVER['SERVER_NAME']) {
+
+				$origin = sprintf('http://%s:%s', $_SERVER['SERVER_NAME'], $_SERVER['SERVER_PORT']);
+				/**
+				 * you probably have to set it to this
+				 * the issue is that some requests will use 127.0.0.1
+				 * (probably the fonts from the css files)
+				 * others will use localhost
+				 *
+				 * this should only activate for the cli server
+				 */
+				$origin = '*';
+				header("Access-Control-Allow-Origin: $origin");
+				header("Access-Control-Allow-Credentials: true");
+				header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+				header('Access-Control-Allow-Headers: Content-Type, Accept');
+			}
+		}
+
 		if (class_exists('dvc\application')) {
+
 			/**
 			 * Extended example, uses an application directory structure
 			 *
@@ -24,8 +47,10 @@ class launcher {
 			 */
 			application::run();
 		} elseif (class_exists('Slim\Factory\AppFactory')) {
+
 			slim::run();
 		} elseif (class_exists('pages\page')) {
+
 			/**
 			 * use the tutorial from https://github.com/bravedave/pages
 			 * to activate this extension
@@ -35,6 +60,7 @@ class launcher {
 
 			print Parsedown::instance()->text(file_get_contents(__DIR__ . '/../../Readme.md'));
 		} elseif (class_exists('Parsedown')) {
+
 			/**
 			 * Well not that simple - you have extended it with
 			 * composer require erusev/parsedown
